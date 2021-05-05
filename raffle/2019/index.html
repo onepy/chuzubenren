@@ -21,9 +21,9 @@
   <div><button id="updateBtn">抽奖</button><span id="user"></span></div>
   <canvas id="glDoodle" width="512" height="512"></canvas>
   <script type="module">
-    import GlRenderer from '../lib/gl-renderer.js';
-    import members from '../lib/members.js';
-    import prizes from '../lib/prizes.js';
+    import GlRenderer from '2019/lib/gl-renderer.js';
+    import members from '2019/lib/members.js';
+    import prizes from '2019/lib/prizes.js';
 
     const glDoodle = document.getElementById('glDoodle');
     const doodle = new GlRenderer(glDoodle, {autoUpdate: false});
@@ -35,7 +35,7 @@
       textureCanvas.height = height;
       const ctx = textureCanvas.getContext('2d');
 
-      const program = await doodle.load('../lib/fragment.glsl');
+      const program = await doodle.load('2019/lib/fragment.glsl');
       doodle.useProgram(program);
       doodle.uniforms.resolution = [width, height];
 
